@@ -2,6 +2,7 @@ pipeline {
     agent any
     environment {
         KUBECONFIG = credentials('k8s-config') // Configure credentials in Jenkins
+        PATH = "${env.PATH}:/usr/local/bin"
     }
     stages {
         stage('Checkout') {
